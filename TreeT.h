@@ -25,6 +25,10 @@ public:
     void Remove(T value);    // Remove value from the tree
     bool Contains(T value);  // Determines if value is in the tree
 
+    void AddR(T value);
+    bool ContainsR(T value);
+
+    bool IsEmpty();
     int Size();     // Number of value in the tree
 
     // These are used by the iterator
@@ -33,7 +37,7 @@ public:
 
 private:
     struct Node {
-        Node* left = nullptr;
+        Node* left = nullptr;      //default for left and right is nullptr
         Node* right = nullptr;
         T value;
     };
@@ -57,6 +61,7 @@ private:
     void PlacePostOrder(Node* node);
     void PlaceInOrder(Node* node);
 };
+
 
 
 #include "TreeT.cpp"
